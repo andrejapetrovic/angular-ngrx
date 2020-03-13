@@ -11,7 +11,7 @@ import * as fromDrivers from '../reducers/drivers.reducer';
   selector: 'app-drivers',
   template: `
     <div style="text-align: center">
-      <button mat-button (click)="refresh()">Refresh</button>
+      <button mat-button (click)="refresh()" color="primary">Refresh</button>
     </div>
     <table mat-table [dataSource]="drivers$ | async" class="mat-elevation-z8" style="margin: auto; width: 60%">
     <!--- Note that these columns can be defined in any order.

@@ -13,9 +13,9 @@ import { Driver } from '../models/driver.model';
   selector: 'app-teams',
   template: `
     <div style="text-align: center">
-      <button mat-button (click)="refresh()">Refresh</button>
+      <button mat-button (click)="refresh()" color="primary">Refresh</button>
     </div>
-    <table mat-table [dataSource]="teams$ | async" class="mat-elevation-z8" style="margin: auto; width: 60%">
+    <table mat-table [dataSource]="teams$ | async" class="mat-elevation-z8" style="margin: auto; width: 70%">
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
   
@@ -89,12 +89,12 @@ import { Driver } from '../models/driver.model';
       <th mat-header-cell *matHeaderCellDef> Drivers </th>
       <td mat-cell *matCellDef="let team">
           <div *ngFor="let driver of team.drivers">
-              <span style="min-width: 150px; float: left">{{ driver.name }}</span>
-              <button (click)="removeDriver(team, driver)">-</button>
+              <span style="min-width: 150px; float: left; padding-top: 10px">{{ driver.name }}</span>
+              <button (click)="removeDriver(team, driver)" mat-button color="warn">Remove</button>
           </div>
           <div *ngIf="!team.drivers || team.drivers.length < 2">
           <form #driverForm="ngForm" (ngSubmit)="addDriver(team, driverForm.value.driver)">
-            <span style="min-width: 150px; float: left">
+            <span style="min-width: 150px; float: left; padding-top: 10px">
             <select name="driver" ngModel>
             <option></option>
             <option *ngFor="let driver of teamlessDrivers$ | async"
@@ -103,7 +103,7 @@ import { Driver } from '../models/driver.model';
               </option> 
               </select>
               </span>
-            <button type="submit">+</button>
+            <button type="submit" mat-button color="primary">Add</button>
            </form> 
           </div>
       </td>
@@ -141,7 +141,7 @@ export class TeamsComponent implements OnInit {
   teams$: Observable<Team[]>;
   teamlessDrivers$: Observable<Driver[]>;
   teamsForm: FormGroup;
-  displayedColumns: string[] = ['actions', 'position', 'name', 'country', 'podiums', 'titles', 'drivers'];
+  displayedColumns: string[] = ['actions', 'position', 'name', 'titles', 'country', 'podiums', 'drivers'];
 
   constructor(private store: Store<fromteams.State>, private fb: FormBuilder, private elRef: ElementRef) { }
 
