@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DriversService {
   
-  private url = 'http://localhost:4000/'; 
+  private url = '/'; 
   
   constructor(private http: HttpClient) { 
   }
