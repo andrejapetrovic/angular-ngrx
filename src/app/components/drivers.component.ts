@@ -117,7 +117,7 @@ export class DriversComponent implements OnInit {
     this.refresh();
     this.drivers$ = this.store.select(fromDrivers.selectAll);
     this.driversForm = this.fb.group({
-      name: 'Aki',
+      name: 'New Driver',
       country: 'srb',
       points: '9001',
     });

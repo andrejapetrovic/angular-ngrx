@@ -153,7 +153,7 @@ export class TeamsComponent implements OnInit {
         map(driver => driver.filter(d => !d.team))
         );
     this.teamsForm = this.fb.group({
-      name: 'Aki',
+      name: 'New Team',
       country: 'srb',
       championshipTitles: '9001',
       podiumFinishes: '10000'

@@ -4,9 +4,9 @@ import { TeamsComponent } from './components/teams.component';
 import { DriversComponent } from './components/drivers.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/teams', pathMatch: 'full'},
-  { path: 'drivers', component: DriversComponent },
-  { path: 'teams', component: TeamsComponent }
+  { path: '', redirectTo: '/a/teams', pathMatch: 'full'},
+  { path: 'a/drivers', component: DriversComponent },
+  { path: 'a/teams', component: TeamsComponent }
 ];
 
 @NgModule({
