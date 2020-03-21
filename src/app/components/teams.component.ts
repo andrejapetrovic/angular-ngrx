@@ -35,13 +35,11 @@ import { Driver } from '../models/driver.model';
       </td>
     </ng-container>
 
-    <!-- Position Column -->
     <ng-container matColumnDef="position">
       <th mat-header-cell *matHeaderCellDef> Position </th>
       <td mat-cell *matCellDef="let team;index as i;"> {{ i + 1}} </td>
     </ng-container>
   
-    <!-- Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Name </th>
       <td mat-cell *matCellDef="let team;"> 
@@ -52,7 +50,6 @@ import { Driver } from '../models/driver.model';
       </td>
     </ng-container>
   
-    <!-- Country Column -->
     <ng-container matColumnDef="country">
       <th mat-header-cell *matHeaderCellDef> Country </th>
       <td mat-cell *matCellDef="let team">
@@ -63,23 +60,21 @@ import { Driver } from '../models/driver.model';
       </td>
     </ng-container>
 
-        <!-- Country Column -->
     <ng-container matColumnDef="podiums">
       <th mat-header-cell *matHeaderCellDef> Podium finishes </th>
       <td mat-cell *matCellDef="let team">
-        <input *ngIf="team.editable; else notEditable" placeholder="country" [disabled]="team.loading"
-          value="{{ team.podiumFinishes }}" (input)="setUpdate($event, team, 'country')" autocomplete="off"
+        <input *ngIf="team.editable; else notEditable" placeholder="podium finishes" [disabled]="team.loading"
+          value="{{ team.podiumFinishes }}" (input)="setUpdate($event, team, 'podiumFinishes')" autocomplete="off"
           (keyup.enter)="edit(team)">
         <ng-template #notEditable> {{ team.podiumFinishes }} </ng-template>
       </td>
     </ng-container>
 
-        <!-- Country Column -->
     <ng-container matColumnDef="titles">
       <th mat-header-cell *matHeaderCellDef> Championship titles </th>
       <td mat-cell *matCellDef="let team">
-        <input *ngIf="team.editable; else notEditable" placeholder="country" [disabled]="team.loading"
-          value="{{ team.country }}" (input)="setUpdate($event, team, 'country')" autocomplete="off"
+        <input *ngIf="team.editable; else notEditable" placeholder="titles" [disabled]="team.loading"
+          value="{{ team.championshipTitles }}" (input)="setUpdate($event, team, 'championshipTitles')" autocomplete="off"
           (keyup.enter)="edit(team)">
         <ng-template #notEditable> {{ team.championshipTitles }} </ng-template>
       </td>
